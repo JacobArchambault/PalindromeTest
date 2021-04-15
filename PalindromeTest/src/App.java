@@ -1,5 +1,5 @@
 
-public class Ch15Lab2 {
+public class App {
 
 	/**
 	 * The isPalindrome method determines whether a string* is a palindrome.*
@@ -13,7 +13,7 @@ public class Ch15Lab2 {
 		if (str.length() <= 1) {
 			status = true;
 		} else if (str.charAt(0) == str.charAt(str.length() - 1)) {
-			status = Ch15Lab2.isPalindrome(str.substring(1, str.length() - 1));
+			status = App.isPalindrome(str.substring(1, str.length() - 1));
 		}
 		return status;
 	}
@@ -26,7 +26,7 @@ public class Ch15Lab2 {
 		// Test the strings.
 		for (final String testString : testStrings) {
 			System.out.print("\"" + testString + "\"");
-			if (Ch15Lab2.isPalindrome(testString.toUpperCase())) {
+			if (App.isPalindrome(testString.toUpperCase())) {
 				System.out.println(" is a palindrome.\n");
 			} else {
 				System.out.println(" is not a palindrome.\n");
