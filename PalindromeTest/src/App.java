@@ -9,13 +9,9 @@ public class App {
 	 *         false otherwise.
 	 */
 	public static boolean isPalindrome(final String str) {
-		var status = false;
-		if (str.length() <= 1) {
-			status = true;
-		} else if (str.charAt(0) == str.charAt(str.length() - 1)) {
-			status = App.isPalindrome(str.substring(1, str.length() - 1));
-		}
-		return status;
+		return str.length() <= 1 ? true
+				: str.charAt(0) == str.charAt(str.length() - 1) ? App.isPalindrome(str.substring(1, str.length() - 1))
+						: false;
 	}
 
 	public static void main(final String[] args) {
@@ -25,12 +21,8 @@ public class App {
 				"Kayak" };
 		// Test the strings.
 		for (final String testString : testStrings) {
-			System.out.print("\"" + testString + "\"");
-			if (App.isPalindrome(testString.toUpperCase())) {
-				System.out.println(" is a palindrome.\n");
-			} else {
-				System.out.println(" is not a palindrome.\n");
-			}
+			System.out.println(App.isPalindrome(testString.toUpperCase()) ? testString + " is a palindrome.\n"
+					: testString + " is not a palindrome.\n");
 		}
 	}
 }
